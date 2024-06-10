@@ -1,8 +1,11 @@
+/* GRIDS */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .parentGrid {
@@ -13,23 +16,54 @@
   border-width: 2px;
 }
 
+.childGrid {
+  padding: 2px;
+}
+
 .conqueredGrid {
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: 2px solid black;
+  border-radius: 5px;
+
+  font-size: 200%;
+  transition: all 1s;
 }
 
-.cell {
+.hlConqueredGrid {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
-.hl-border {
-  border-color: green;
-}
+/* CELLS */
 
 button {
   outline: none;
   text-decoration: none;
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+.cell {
+  margin: 3px;
+  transition: all 0.5s;
+  padding: 2px;
   border: 1px solid black;
+  border-radius: 5px;
+  font-size: 200%;
+}
+
+.selectableCell:hover {
+  padding: 0px;
+  border-width: 3px;
+}
+
+.hlCell {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
