@@ -1,0 +1,35 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid black;
+}
+
+.parentGrid {
+  height: 600px;
+  width: 600px;
+  gap: 10px;
+  padding: 10px;
+  border-width: 2px;
+}
+
+.conqueredGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid black;
+}
+
+.cell {
+}
+
+.hl-border {
+  border-color: green;
+}
+
+button {
+  outline: none;
+  text-decoration: none;
+  border: 1px solid black;
+}
