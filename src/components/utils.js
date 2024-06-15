@@ -15,3 +15,11 @@ export function checkGridStatus(grid) {
   }
   return false;
 }
+
+export function fromLocalStorage(key, getValue) {
+  let val = localStorage.getItem(key);
+  if (val) return JSON.parse(val);
+  val = getValue();
+  localStorage.setItem(key, JSON.stringify(val));
+  return val;
+}

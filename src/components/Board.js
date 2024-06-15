@@ -1,36 +1,63 @@
-import { useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 
-import ParentGrid from "./ParentGrid.js";
-import { GameStatusContext } from "./GameStatusContext.js";
+import { gameStateReducer, GameState } from "./GameState.js";
+import Grid from "./Grid.js";
 
 import "./Board.css";
 
-function Board() {
-  const [player, setPlayer] = useState("x");
-  const [gameStatus, setGameStatus] = useState({
-    isOver: false,
-    isDraw: false,
-  });
+function Board({ player, connection }) {
+  const opponent = player == "x" ? "o" : "x";
+  const [isTurn, setIsTurn] = useState(player == "x");
+  const [gameState, dispatch] = useReducer(gameStateReducer, new GameState());
 
-  function handlePlayerMove(isOver, isDraw) {
-    if (gameStatus.isOver) return;
+  useEffect(() => {
+    connection.on('data', ({ type, index }) => {
+      if (type) return dispatch({ type });
+      console.log("opponent's move on " + index);
+      dispatch({ player: opponent, index });
+      setIsTurn(true);
+    })
+    return () => connection.off("data");
+  }, [])
 
-    if (isOver) {
-      setGameStatus({ isOver, isDraw });
-    } else setPlayer(player == "x" ? "o" : "x");
+  function handleClick(index) {
+    return () => {
+      if (!isTurn || gameState.grid[index] != " ") return;
+      dispatch({ player, index });
+      console.log("sending move to opponent " + index);
+      connection.send({ index });
+      setIsTurn(false);
+    };
   }
 
+  function rematch() {
+    dispatch({
+      type: "rematch"
+    })
+    connection.send({ type: "rematch" });
+  }
+
+  console.log(gameState, isTurn)
   const title = () => {
-    if (gameStatus.isOver) return gameStatus.isDraw ? "Draw" : player + " won";
-    return player + " 's move";
+    if (gameState.isOver) {
+      if (gameState.winner == player) return `You won (${player})`;
+      return `Opponent won (${opponent})`;
+    }
+    else if (isTurn) return `Your move as (${player})`
+    else return `Waiting for opponent (${opponent})`
   };
+
   return (
-    <GameStatusContext.Provider value={gameStatus}>
-      <main className="board">
-        <p> {title()} </p>
-        <ParentGrid player={player} onPlayerMove={handlePlayerMove} />
-      </main>
-    </GameStatusContext.Provider>
+    <main className="board">
+      <p> {title()} </p>
+      {gameState.isOver && <button onClick={rematch}> rematch </button> }
+      <Grid
+        grid={gameState.grid}
+        moves={gameState.moves}
+        isTakingInput={isTurn && !gameState.isOver}
+        onCellClick={handleClick}
+      />
+    </main>
   );
 }
 
