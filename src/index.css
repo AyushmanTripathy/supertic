@@ -51,3 +51,16 @@ header {
     text-align: center;
   }
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingImg {
+  width: 300px;
+  height: 300px;
+  max-height: 50vh;
+  max-width: 80vw;
+}

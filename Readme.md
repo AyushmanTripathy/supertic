@@ -17,6 +17,9 @@ npm start
 
 ## Todo
 
+- [ ] opponent direct closing window
+- [ ] footer not visible in mobiles
+- [x] loading gif bug
 - [ ] make a gif to explain
 - [ ] revamp ui
 - [x] add option to check if opponent is online

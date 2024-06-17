@@ -4,7 +4,7 @@ export default function Menu({ peerId, peer, onConnection }) {
   const [opponentId, setOpponentId] = useState("");
 
   function connectWithOpponent() {
-    if (!opponentId || opponentId == peerId) return;
+    if (!opponentId) return;
     console.log("connecting with " + opponentId);
     const conn = peer.connect(opponentId);
     onConnection(conn);
