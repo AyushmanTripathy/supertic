@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Menu.css";
 
 export default function Menu({ peerId, peer, onConnection }) {
   const [opponentId, setOpponentId] = useState("");
@@ -10,13 +11,18 @@ export default function Menu({ peerId, peer, onConnection }) {
     onConnection(conn);
   }
 
+  function copyId() {
+    if (navigator.clipboard) {
+      if (navigator.clipboard.writeText(peerId));
+    } else alert("clipboard support not available");
+  }
+
   return (
     <main className="menu">
-      <p>
-        your id is
-        <strong> {peerId} </strong>
-        .share it with your friend
-      </p>
+      <p> Share your id with your friend </p>
+      <strong> {peerId} </strong>
+      <button onClick={copyId}> copy id </button>
+      <p>Or paste their id to join them </p>
       <input
         type="text"
         placeholder="your opponent's id"

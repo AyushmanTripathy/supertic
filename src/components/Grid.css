@@ -46,15 +46,13 @@
 
 /* CELLS */
 
-button {
+.cell {
   outline: none;
   text-decoration: none;
   border: none;
   background-color: white;
   color: black;
-}
 
-.cell {
   margin: 3px;
   transition: all 0.5s;
   padding: 2px;
