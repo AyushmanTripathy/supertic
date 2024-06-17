@@ -7,8 +7,8 @@
   top: 0;
   left: 0;
 
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 
   display: grid;
   grid-template-rows: 2fr 15fr 1fr;
@@ -22,6 +22,11 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+input {
+  outline: none;
+  text-decoration: none;
 }
 
 footer {

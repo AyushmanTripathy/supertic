@@ -8,6 +8,8 @@ check it out at [supertic.netlify.app](https://supertic.netlify.app)
 
 **NOTE** you may face connectivity issues if you are connected to a wifi router. i working on it.
 
+## Tech Stack
+
 ## Running Locally
 
 ```
@@ -17,8 +19,9 @@ npm start
 
 ## Todo
 
+- [x] share feature
 - [ ] opponent direct closing window
-- [ ] footer not visible in mobiles
+- [x] footer not visible in mobiles
 - [x] loading gif bug
 - [ ] make a gif to explain
 - [ ] revamp ui

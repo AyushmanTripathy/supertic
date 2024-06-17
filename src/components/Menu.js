@@ -17,6 +17,14 @@ export default function Menu({ peerId, peer, onConnection }) {
     } else alert("clipboard support not available");
   }
 
+  function shareWebsite() {
+    if (navigator.share) {
+      navigator.share({
+        url: "https://supertic.netlify.app"
+      })
+    } else alert("web share not supported")
+  }
+
   return (
     <main className="menu">
       <p> Share your id with your friend </p>
@@ -30,6 +38,8 @@ export default function Menu({ peerId, peer, onConnection }) {
         onChange={(e) => setOpponentId(e.target.value)}
       />
       <button onClick={connectWithOpponent}> Connect </button>
+      <p> Alone? Invite a friend </p>
+      <button onClick={shareWebsite}> Share </button>
     </main>
   );
 }
