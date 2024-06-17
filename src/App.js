@@ -1,14 +1,17 @@
 import Game from "./components/Game.js";
+import Layout from "./components/Layout.js";
 import Loading from "./components/Loading.js";
 
 import { Suspense } from "react";
 
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Game />
-    </Suspense>
-  )
+    <Layout>
+      <Suspense fallback={<Loading />}>
+        <Game />
+      </Suspense>
+    </Layout>
+  );
 }
 
 export default App;

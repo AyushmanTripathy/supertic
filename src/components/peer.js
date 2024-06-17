@@ -1,5 +1,16 @@
 import { Peer } from "peerjs";
 
+const alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+const idLength = 5;
+
+function generateId() {
+  let id = "";
+  for (let i = 0; i < idLength; i++) {
+    id += alphabets[Math.floor(Math.random() * (alphabets.length - 1))];
+  }
+  return id;
+}
+
 export function openPeer() {
   // will be exposed to frontend anyways
   // get turn servers from open relay
@@ -8,14 +19,17 @@ export function openPeer() {
     const response = await fetch(
       "https://supertic.metered.live/api/v1/turn/credentials?apiKey=3c5554e627ce07bfed224001202b39c2e388"
     );
+    if (!response.ok) rej("Fetch to OpenRelay falied");
     const iceServers = await response.json();
     console.log("Got servers ...", iceServers);
-    const peer = new Peer({
+
+    const peerId = generateId();
+    const peer = new Peer(peerId, {
       config: { iceServers },
     });
 
     peer.on("open", (id) => {
-      console.log("Peer opened ...");
+      console.log("Peer opened with id " + id);
       res([peer, id]);
     });
   });

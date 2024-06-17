@@ -2,7 +2,7 @@ import Board from "./Board.js";
 import Menu from "./Menu.js";
 
 import { useState } from "react";
-import { openPeer } from "./utils.js";
+import { openPeer } from "./peer.js";
 
 const peerPromise = openPeer();
 export default function Game() {

@@ -17,6 +17,7 @@ npm start
 
 ## Todo
 
+- [ ] change so that Peer is instanciated when a game is started
 - [ ] make a gif to explain
 - [ ] revamp ui
 - [ ] add option to check if opponent is online

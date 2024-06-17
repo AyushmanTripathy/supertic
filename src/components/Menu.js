@@ -12,7 +12,7 @@ export default function Menu({ peerId, peer, onConnection }) {
   }
 
   return (
-    <section className="menu">
+    <main className="menu">
       <p>
         your id is
         <strong> {peerId} </strong>
@@ -25,6 +25,6 @@ export default function Menu({ peerId, peer, onConnection }) {
         onChange={(e) => setOpponentId(e.target.value)}
       />
       <button onClick={connectWithOpponent}> Connect </button>
-    </section>
+    </main>
   );
 }
