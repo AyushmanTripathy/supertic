@@ -17,14 +17,13 @@ npm start
 
 ## Todo
 
-- [ ] change so that Peer is instanciated when a game is started
 - [ ] make a gif to explain
 - [ ] revamp ui
-- [ ] add option to check if opponent is online
+- [x] add option to check if opponent is online
 - [ ] add good ui for menu
-- [ ] make ids smaller
+- [x] make ids smaller
 - [ ] fix problem with routers
-- [ ] write a readme
+- [x] write a readme
 - [x] added TURN server
 - [x] added basic multiplayer
 - [x] add loading screen using suspense
