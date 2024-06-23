@@ -20,7 +20,7 @@ export default function Game() {
       // failed to connection
       conn.close();
       flushSync(() => setConnection(null));
-      dialog.current.showModal();
+      if (dialog) dialog.current.showModal();
     }, 10000);
 
     conn.on("open", () => {

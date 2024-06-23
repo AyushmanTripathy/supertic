@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       {children}
       <footer>
         <p>
-          Made with React, WebRTC, PeerJS and ❤ by
+          Made with React, WebRTC, PeerJS and ❤  by
           <a href="https://github.com/AyushmanTripathy"> @AyushmanTripathy </a>
         </p>
       </footer>

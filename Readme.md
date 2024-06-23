@@ -19,6 +19,7 @@ npm start
 
 ## Todo
 
+- [ ] add postcss autoprexier
 - [x] share feature
 - [ ] opponent direct closing window
 - [x] footer not visible in mobiles

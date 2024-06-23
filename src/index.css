@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Montserrat", sans-serif;
 }
 
 .layout {
@@ -34,14 +34,15 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  p {
-    text-align: center;
-  }
-  a {
-    color: blue;
-    text-decoration: none;
-  }
+  width: 100vw;
+}
+footer p {
+  text-align: center;
+  max-width: 80vw;
+}
+footer a {
+  color: blue;
+  text-decoration: none;
 }
 
 header {
@@ -49,14 +50,15 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
-  h2 {
-    margin: 0;
-  }
-  p {
-    margin: 0;
-    text-align: center;
-  }
+header h2 {
+  margin: 0;
+}
+
+header p {
+  margin: 0;
+  text-align: center;
 }
 
 .loading {
