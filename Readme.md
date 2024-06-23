@@ -17,20 +17,21 @@ npm i
 npm start
 ```
 
-## Todo
-
-- [ ] add postcss autoprexier
-- [x] share feature
-- [ ] opponent direct closing window
-- [x] footer not visible in mobiles
-- [x] loading gif bug
-- [ ] make a gif to explain
-- [ ] revamp ui
-- [x] add option to check if opponent is online
-- [ ] add good ui for menu
-- [x] make ids smaller
-- [ ] fix problem with routers
-- [x] write a readme
-- [x] added TURN server
-- [x] added basic multiplayer
-- [x] add loading screen using suspense
+<details>
+    <summary> TODO List </summary>
+  
+ -   [x] share feature
+ -   [ ] opponent direct closing window
+ -   [x] footer not visible in mobiles
+ -   [x] loading gif bug
+ -   [ ] make a gif to explain
+ -   [ ] revamp ui
+ -   [x] add option to check if opponent is online
+ -   [ ] add good ui for menu
+ -   [x] make ids smaller
+ -   [ ] fix problem with routers
+ -   [x] write a readme
+ -   [x] added TURN server
+ -   [x] added basic multiplayer
+ -   [x] add loading screen using suspense
+</details>
